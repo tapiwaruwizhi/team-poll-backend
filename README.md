@@ -11,5 +11,9 @@
 ## Getting Started
 
 1. Install dependencies:
-   ```bash
+
    npm installs
+
+## Tests
+
+To run test you npm run jest
