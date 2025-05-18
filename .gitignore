@@ -15,9 +15,6 @@ dist/
 build/
 tmp/
 temp/
-tests/
-jest.config.js
-app.js
 
 db
 
