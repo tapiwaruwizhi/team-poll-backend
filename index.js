@@ -18,6 +18,18 @@ fastify.register(require("@fastify/jwt"), {
 // WebSocket support
 fastify.register(require("@fastify/websocket"));
 
+
+// const fastifyRedis = require('@fastify/redis')
+
+
+fastify.register(require('@fastify/redis'), {
+  host: 'redis', // Match container name
+  port: 6379
+});
+
+const voteFlusher = require('./workers/voteFlusher');
+ voteFlusher(fastify);
+
 // Metrics endpoint
 const client = require("prom-client");
 const register = new client.Registry();

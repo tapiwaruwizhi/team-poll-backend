@@ -15,6 +15,8 @@ module.exports = fp(async function (fastify, opts) {
     // Test the connection
     const [rows] = await fastify.mysql.query('SELECT 1');
   } catch (err) {
+    console.log(err)
+    fastify.log.error(err, '❌ Failed to connect to MySQL');
     fastify.log.error('❌ Failed to connect to MySQL:', err);
     process.exit(1); // Stop server if connection fails
   }
